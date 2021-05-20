@@ -86,6 +86,7 @@ body{
     font-weight: bold;
     border: 1px solid black;
     margin-left: 0px;
+    cursor: pointer;
 }
 .hidden{
     background-color: transparent !important;
