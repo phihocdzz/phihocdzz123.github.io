@@ -45,6 +45,7 @@ body{
 .button{
     background-color: hsl(223, 31%, 20%);
     border-radius: 50px;
+    cursor: default;
 }
 .button button{
     border-radius: 50px;
