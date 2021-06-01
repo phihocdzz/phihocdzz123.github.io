@@ -83,24 +83,22 @@ renderAntonym()
 
 let textEl = document.querySelector('.search-bar input[type ="text"]')
 let sentenceEl = document.querySelector('.sentence-searched')
-textEl.onkeypress  = (e) => {
-    // fetch(`https://api.tracau.vn/WBBcwnwQpV89/s/${e.target.value}/en`)
-    // .then(response => response.json())
-    // .then(result => {
-    //     return result.sentences.map(sentence => {
-    //         return `<div class="sentence">
-    //                     <div class="vietnamese">
-    //                         <p> ${sentence.fields.vi}
-    //                     </div>
-    //                     <div class="english">
-    //                         <p> ${sentence.fields.en}
-    //                     </div>
-    //                 </div>
-    //         `
-    //     })
-    // })
-    // .then(result => sentenceEl.innerHTML = result.join(''))
-    // e.target.value = ''
-    alert(e.which)
+textEl.onkeyup  = (e) => {
+    fetch(`https://api.tracau.vn/WBBcwnwQpV89/s/${e.target.value}/en`)
+    .then(response => response.json())
+    .then(result => {
+        return result.sentences.map(sentence => {
+            return `<div class="sentence">
+                        <div class="vietnamese">
+                            <p> ${sentence.fields.vi}
+                        </div>
+                        <div class="english">
+                            <p> ${sentence.fields.en}
+                        </div>
+                    </div>
+            `
+        })
+    })
+    .then(result => sentenceEl.innerHTML = result.join(''))
     
 }
